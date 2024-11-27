@@ -9,7 +9,9 @@ app.get("/", (req, res) => {
   return res.send("Homepage");
 });
 
-app.get;
+app.get("/mode", (reg, res) => {
+  return res.send();
+});
 
 app.listen(3000, function () {
   console.log("App on port 3000");
