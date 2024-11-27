@@ -24,4 +24,6 @@ function findMode(arr) {
       count = freqCounter[key];
     }
   }
+
+  return +mostFrequent;
 }
