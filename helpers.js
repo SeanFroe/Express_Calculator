@@ -49,3 +49,8 @@ function convertAndValidateNumsArray(numsAsStrings) {
 
   return result;
 }
+
+module.exports = {
+  findMode,
+  convertAndValidateNumsArray,
+};
