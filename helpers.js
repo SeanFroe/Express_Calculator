@@ -61,5 +61,6 @@ function findMean(nums) {
 }
 module.exports = {
   findMode,
+  findMean,
   convertAndValidateNumsArray,
 };
