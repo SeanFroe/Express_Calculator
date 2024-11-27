@@ -12,9 +12,6 @@ const {
 } = require("./helpers");
 // -------------------------------------------------------------------
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
 //*************************** Routes ***********************************/
 
 //--------------------------- HomePage -------------------------------
@@ -93,6 +90,25 @@ app.get("/median", (req, res, next) => {
   return res.send(result);
 });
 
+// ---------------- GENERAL ERROR HANDLING ------------------------
+/** general error handler */
+app.use(function (req, res, next) {
+  const err = new ExpressError("Not Found", 404);
+  // pass the error to the next piece of middleware
+  return next(err);
+});
+/** general error handler */
+
+app.use(function (err, req, res, next) {
+  res.status(err.status || 500);
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
+
+  return res.json({
+    error: err,
+    message: err.message,
+  });
+});
 //---------------------------- PORT 3000 -------------------------------
 app.listen(3000, function () {
   console.log("App on port 3000");
