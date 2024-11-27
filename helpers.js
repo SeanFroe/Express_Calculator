@@ -38,7 +38,7 @@ function convertAndValidateNumsArray(numsAsStrings) {
   for (let i = 0; i < numsAsStrings.length; i++) {
     let valToNumber = Number(numsAsStrings[i]);
 
-    if ((Number, isNaN(valToNumber))) {
+    if (isNaN(valToNumber)) {
       return new Error(
         `The value '${numsAsStrings[i]}' at index ${i} is not a valid number.`
       );
