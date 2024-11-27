@@ -1,15 +1,20 @@
+// ************************ EXPRESS CALCULATOR ************************
 const express = require("express");
 const app = express();
-const ExpressError = require("./expressError");
 
+//------------------ EXTERNAL .JS FILES ------------------------
+const ExpressError = require("./expressError");
 const {
   findMode,
   findMean,
+  findMedian,
   convertAndValidateNumsArray,
 } = require("./helpers");
+// -------------------------------------------------------------------
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 //*************************** Routes ***********************************/
 
 //--------------------------- HomePage -------------------------------

@@ -1,3 +1,5 @@
+// ********************** HELPER FUNCTIONS *********************
+
 /*Build a frenquency counter object from an array
 * @param {Array} arr any array
 
@@ -10,7 +12,7 @@ function createFrequencyCounter(arr) {
     return acc;
   }, {});
 }
-
+//----------------------------  FIND MODE FUNCTION -------------------
 function findMode(arr) {
   let freqCounter = createFrequencyCounter(arr);
 
@@ -27,7 +29,7 @@ function findMode(arr) {
 
   return +mostFrequent;
 }
-
+//-------------  CONVERT AND VALIDATE NUMS ARRAY FUNCTION ----------
 // Attempt to convert an array of strings to an array of numbers
 // @param {Array} numsAsStrings array of strings
 // @return {Array|Error} an array or an error object
@@ -50,6 +52,7 @@ function convertAndValidateNumsArray(numsAsStrings) {
   return result;
 }
 
+//--------------------------- FIND MEAN -------------------------------
 function findMean(nums) {
   if (nums.length === 0) return 0;
 
@@ -59,8 +62,29 @@ function findMean(nums) {
     }) / nums.length
   );
 }
+
+//---------------------------- FIND MEDIAN -------------------------
+
+function findMedian(nums) {
+  // sort and get the middle element
+
+  nums.sort((a, b) => a - b);
+
+  let middleIndex = Math.floor(nums.length / 2);
+  let median;
+
+  if (nums.length % 2 === 0) {
+    median = nums[middleIndex] + nums[middleIndex - 1] / 2;
+  } else {
+    median = nums[middleIndex];
+  }
+
+  return median;
+}
+
 module.exports = {
   findMode,
   findMean,
+  findMedian,
   convertAndValidateNumsArray,
 };
