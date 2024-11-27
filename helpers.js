@@ -1,5 +1,6 @@
 // ********************** HELPER FUNCTIONS *********************
 
+//----------------------- CREATE FREQUENCY COUNTER ----------------------
 /*Build a frenquency counter object from an array
 * @param {Array} arr any array
 
@@ -87,4 +88,5 @@ module.exports = {
   findMean,
   findMedian,
   convertAndValidateNumsArray,
+  createFrequencyCounter,
 };
